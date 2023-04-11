@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "enki-design-system-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:adeo/enki-design-system-ios.git",
+      "state" : {
+        "revision" : "c9d588d5fa0da451705662bd0a80e7343f547fbc",
+        "version" : "0.3.14"
+      }
+    },
+    {
+      "identity" : "swiftgenplugin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftGen/SwiftGenPlugin",
+      "state" : {
+        "revision" : "879b85a470cacd70c19e22eb7e11a3aed66f4068",
+        "version" : "6.6.2"
+      }
+    }
+  ],
+  "version" : 2
+}
