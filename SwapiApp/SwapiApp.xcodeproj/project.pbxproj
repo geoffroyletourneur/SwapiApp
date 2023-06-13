@@ -96,6 +96,9 @@
 		BED8097A29E5888C00BF00DF /* SwapiApp */ = {
 			isa = PBXGroup;
 			children = (
+				BED809AA29E58DC500BF00DF /* Data */,
+				BED809A929E58DB800BF00DF /* Domain */,
+				BED809A829E58DAB00BF00DF /* Presentation */,
 				BED8097B29E5888C00BF00DF /* SwapiAppApp.swift */,
 				BED8097D29E5888C00BF00DF /* ContentView.swift */,
 				BED8097F29E5889000BF00DF /* Assets.xcassets */,
@@ -129,6 +132,27 @@
 			path = SwapiAppUITests;
 			sourceTree = "<group>";
 		};
+		BED809A829E58DAB00BF00DF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		BED809A929E58DB800BF00DF /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BED809AA29E58DC500BF00DF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,10 +163,12 @@
 				BED8097429E5888C00BF00DF /* Sources */,
 				BED8097529E5888C00BF00DF /* Frameworks */,
 				BED8097629E5888C00BF00DF /* Resources */,
+				BEFADAC32A3898640019B73E /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BEFADAC82A389B760019B73E /* PBXTargetDependency */,
 			);
 			name = SwapiApp;
 			packageProductDependencies = (
@@ -222,6 +248,8 @@
 			mainGroup = BED8096F29E5888C00BF00DF;
 			packageReferences = (
 				BED809A529E58CE900BF00DF /* XCRemoteSwiftPackageReference "enki-design-system-ios" */,
+				BEFADAC52A3899580019B73E /* XCRemoteSwiftPackageReference "SwiftGenPlugin" */,
+				BEFADAC62A389A3B0019B73E /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */,
 			);
 			productRefGroup = BED8097929E5888C00BF00DF /* Products */;
 			projectDirPath = "";
@@ -259,6 +287,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BEFADAC32A3898640019B73E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BED8097429E5888C00BF00DF /* Sources */ = {
@@ -299,6 +347,10 @@
 			isa = PBXTargetDependency;
 			target = BED8097729E5888C00BF00DF /* SwapiApp */;
 			targetProxy = BED8099329E5889000BF00DF /* PBXContainerItemProxy */;
+		};
+		BEFADAC82A389B760019B73E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = BEFADAC72A389B760019B73E /* SwiftLint */;
 		};
 /* End PBXTargetDependency section */
 
@@ -598,7 +650,23 @@
 			repositoryURL = "git@github.com:adeo/enki-design-system-ios.git";
 			requirement = {
 				kind = exactVersion;
-				version = 0.3.14;
+				version = 0.5.13;
+			};
+		};
+		BEFADAC52A3899580019B73E /* XCRemoteSwiftPackageReference "SwiftGenPlugin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftGen/SwiftGenPlugin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		BEFADAC62A389A3B0019B73E /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lukepistrol/SwiftLintPlugin";
+			requirement = {
+				kind = exactVersion;
+				version = 0.2.6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -608,6 +676,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BED809A529E58CE900BF00DF /* XCRemoteSwiftPackageReference "enki-design-system-ios" */;
 			productName = EnkiDesignSystem;
+		};
+		BEFADAC72A389B760019B73E /* SwiftLint */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEFADAC62A389A3B0019B73E /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */;
+			productName = "plugin:SwiftLint";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

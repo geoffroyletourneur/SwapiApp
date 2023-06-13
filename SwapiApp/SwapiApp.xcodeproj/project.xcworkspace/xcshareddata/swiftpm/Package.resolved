@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "git@github.com:adeo/enki-design-system-ios.git",
       "state" : {
-        "revision" : "c9d588d5fa0da451705662bd0a80e7343f547fbc",
-        "version" : "0.3.14"
+        "revision" : "9a8ee585b78af91e01523d6c2bacbb674bd95eef",
+        "version" : "0.5.13"
       }
     },
     {
@@ -16,6 +16,15 @@
       "state" : {
         "revision" : "879b85a470cacd70c19e22eb7e11a3aed66f4068",
         "version" : "6.6.2"
+      }
+    },
+    {
+      "identity" : "swiftlintplugin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lukepistrol/SwiftLintPlugin",
+      "state" : {
+        "revision" : "d3ec7fb242ebe1d8e23bf17e58a1e27d43125994",
+        "version" : "0.2.6"
       }
     }
   ],
